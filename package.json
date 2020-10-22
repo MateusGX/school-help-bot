@@ -1,0 +1,18 @@
+{
+  "name": "major-mgx-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Mateus A. Martins",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^58.0.0",
+    "nodemailer": "^6.4.11",
+    "sqlite3": "^5.0.0",
+    "telegraf": "^3.38.0"
+  }
+}
