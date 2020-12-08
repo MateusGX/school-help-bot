@@ -47,7 +47,7 @@ function enviar(msg, db, materia, atv_data, anexo, url, nome, dados) {
             from: `${nome} <EMAIL>`,
             to: data[materia],
             subject: `[${atv_data}] - Atividade`,
-            text: `Aluno:${nome}\n${dados}`,
+            text: `Aluno(a):${nome}\n${dados}`,
             attachments: [
                 {
                     filename: anexo,
