@@ -1,3 +1,6 @@
+//DOTENV
+require('dotenv/config');
+
 //MÓDULOS
 const { Telegraf, Stage, session } = require('telegraf');
 const WizardScene = require('telegraf/scenes/wizard');
@@ -32,7 +35,7 @@ db.run(`CREATE TABLE IF NOT EXISTS usuarios (
     )`);
 
 //CRIA O BOT
-const bot = new Telegraf("BOT_TOKEN");
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 //CRIA AS FUNÇÕES DOS COMANDOS
 const cmd = new Comandos(bot, db);

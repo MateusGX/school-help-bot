@@ -6,12 +6,12 @@ const request = require('request');
 const OAuth2 = google.auth.OAuth2;
 
 const oauth2Client = new OAuth2(
-    'CLIENT ID',
-    'CLIENT SECRET',
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
     'https://developers.google.com/oauthplayground'
 );
 oauth2Client.setCredentials({
-    refresh_token: 'REFRESH TOKEN FROM OAUTH PLAYGROUND'
+    refresh_token: process.env.REFRESH_TOKEN
 });
 const accessToken = oauth2Client.getAccessToken();
 
@@ -19,10 +19,10 @@ const smtpTransport = new nodemailer.createTransport({
     service: 'gmail',
     auth: {
         type: 'OAuth2',
-        user: 'EMAIL',
-        clientId: 'CLIENT ID',
-        clientSecret: 'CLIENT SECRET',
-        refreshToken: 'REFRESH TOKEN FROM OAUTH PLAYGROUND',
+        user: process.env.BOT_EMAIL,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
         accessToken: accessToken
     }
 });
@@ -44,7 +44,7 @@ function enviar(msg, db, materia, atv_data, anexo, url, nome, dados) {
             return msg.scene.leave();
         }).pipe(urlStream);
         let mailOptions = {
-            from: `${nome} <EMAIL>`,
+            from: `${nome} <${process.env.BOT_EMAIL}>`,
             to: data[materia],
             subject: `[${atv_data}] - Atividade`,
             text: `Aluno(a):${nome}\n${dados}`,
