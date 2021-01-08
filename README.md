@@ -22,6 +22,20 @@ Inicie o bot com o comando:
 npm start
 ```
 
+Estrutura (.env)
+```
+#BOT
+BOT_EMAIL=
+
+#Telegram
+BOT_TOKEN=
+
+#EMAIL (OAUTH2)
+CLIENT_ID=
+CLIENT_SECRET=
+REFRESH_TOKEN=
+```
+
 ## Comandos
 
 COMANDO | DESCRIÇÃO
