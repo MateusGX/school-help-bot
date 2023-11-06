@@ -1,4 +1,4 @@
-# Major MGX BOT
+# School Help Bot
 
 Esse bot foi criado para auxiliar na organização e no envio das atividades para os respectivos professores.
 
